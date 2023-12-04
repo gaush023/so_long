@@ -6,13 +6,13 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:39:17 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/03 19:57:14 by sagemura         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:41:19 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/so_long.h"
 
-void	ft_putstr_error(char *str)
+int	ft_putstr_error(char *str)
 {
 	size_t	n;
 
@@ -22,4 +22,5 @@ void	ft_putstr_error(char *str)
 		write(2, &str[n], 1);
 		n++;
 	}
+	return (-1);
 }

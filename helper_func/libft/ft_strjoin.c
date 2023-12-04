@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/03 15:15:59 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/04 14:20:00 by sagemura         ###   ########.fr       */
+/*   Created: 2023/12/04 16:28:57 by sagemura          #+#    #+#             */
+/*   Updated: 2023/12/04 18:47:02 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/so_long.h"
 
-int	main(int argc, char *argv[])
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	t_game	game;
+	size_t	len;
+	char	*ptr;
+	size_t	i;
+	size_t	j;
 
-	if (argc > 2)
-		return (ft_error());
-	if (argc == 2 && argcheck_file_types(argv[2]))
-		start_game(&game, argv[1]);
-	else
-		return (ft_error());
-	return (0);
-}
+	if (!s1 || !s2)
+		return (NULL);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	ptr = (char *)malloc(sizeof(char) * (len + 1));
+	if (!ptr)
+		return (NULL);
+	i = 0;
+	while (s1)
+	{
+		ptr[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while (s2)
+	{
+		ptr[i + j] = s2[j];
+		j++;
+	}
 
-static void start_game(t_game *game, char *path)
-{
-	create_maps(game, path);
-	
+	return (ptr);
 }

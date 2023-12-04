@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/03 15:15:59 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/04 14:20:00 by sagemura         ###   ########.fr       */
+/*   Created: 2023/12/04 15:05:58 by sagemura          #+#    #+#             */
+/*   Updated: 2023/12/04 15:31:11 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/so_long.h"
 
-int	main(int argc, char *argv[])
+char	*ft_strdup(const char *str)
 {
-	t_game	game;
+	char	*new_str;
+	size_t	len;
+	size_t	i;
 
-	if (argc > 2)
-		return (ft_error());
-	if (argc == 2 && argcheck_file_types(argv[2]))
-		start_game(&game, argv[1]);
-	else
-		return (ft_error());
-	return (0);
-}
-
-static void start_game(t_game *game, char *path)
-{
-	create_maps(game, path);
-	
+	len = ft_strlen(str);
+	new_str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!new_str)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		new_str[i] = str[i];
+		i++;
+	}
+	new_str[i] = '\0';
+	return (new_str);
 }
