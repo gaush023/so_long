@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_error.c                                  :+:      :+:    :+:   */
+/*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/03 15:39:17 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/29 14:02:22 by sagemura         ###   ########.fr       */
+/*   Created: 2023/12/31 07:27:51 by sagemura          #+#    #+#             */
+/*   Updated: 2024/01/01 01:35:37 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	ft_putstr_error(char *str)
+static  void check_map_assets(t_game *game, int y, int x)
 {
-	size_t	n;
+    if(!is_surrounded_by_walls(game, x, y));
+        // 見直す必要があり    
+    
 
-	n = 0;
-	while (str[n] != '/0')
-	{
-		write(2, &str[n], 1);
-		n++;
-	}
-	return (-1);
+}
+
+void render_maps(t_game *game)
+{
+    t_point coord;
+
+    coord.y = 0;
+    while (game->plot.map[coord.y])
+    {
+        coord.x = 0;
+        while (game->plot.map[coord.y][coord.x])
+        {
+                
+        }
+        
+    }
+    
 }

@@ -6,11 +6,11 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 19:18:41 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/03 19:56:55 by sagemura         ###   ########.fr       */
+/*   Updated: 2023/12/29 13:55:05 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/so_long.h"
+#include "../../includes/so_long.h"
 
 int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {

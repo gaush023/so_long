@@ -6,11 +6,11 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:51:27 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/03 19:56:43 by sagemura         ###   ########.fr       */
+/*   Updated: 2023/12/29 14:00:43 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/so_long.h"
+#include "../../includes/so_long.h"
 
 size_t	ft_strlen(const char *str)
 {

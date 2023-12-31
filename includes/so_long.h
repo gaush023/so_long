@@ -6,20 +6,26 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:40:18 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/04 18:19:16 by sagemura         ###   ########.fr       */
+/*   Updated: 2023/12/31 07:05:08 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_lONG_H
+#ifndef SO_LONG_H
 # define SO_LONG_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 23
 # endif
 
+# define SIZE 32
+# define WINDOW_NAME "./so_long"
+
+# include "path.h"
 # include "structs.h"
 # include <fcntl.h>
 # include <mlx.h>
+# include <stdbool.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -31,6 +37,8 @@ char	*ft_strdup(const char *str);
 char	*ft_strndup(const char *str, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strchr(const char *s, int c);
+char	**ft_split(char const *s, char c);
 
 //helper_func
 int		check_file_types(const char *argv);

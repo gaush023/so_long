@@ -6,11 +6,11 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:05:58 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/04 15:31:11 by sagemura         ###   ########.fr       */
+/*   Updated: 2023/12/29 13:54:56 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/so_long.h"
+#include "../../includes/so_long.h"
 
 char	*ft_strdup(const char *str)
 {

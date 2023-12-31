@@ -6,11 +6,11 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:28:57 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/04 18:47:02 by sagemura         ###   ########.fr       */
+/*   Updated: 2023/12/29 13:54:59 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/so_long.h"
+#include "../../includes/so_long.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -37,6 +37,5 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		ptr[i + j] = s2[j];
 		j++;
 	}
-
 	return (ptr);
 }

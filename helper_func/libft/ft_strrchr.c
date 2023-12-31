@@ -6,11 +6,11 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:51:27 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/03 19:56:28 by sagemura         ###   ########.fr       */
+/*   Updated: 2023/12/29 13:55:11 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/so_long.h"
+#include "../../includes/so_long.h"
 
 char	*ft_strrchr(const char *str, int int_c)
 {

@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   path.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/03 15:15:59 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/31 00:51:23 by sagemura         ###   ########.fr       */
+/*   Created: 2023/12/31 07:01:40 by sagemura          #+#    #+#             */
+/*   Updated: 2023/12/31 07:12:13 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/so_long.h"
+#ifndef PATH_H
+# define PATH_H
 
-int	main(int argc, char *argv[])
-{
-	t_game	game;
+# define WALL_PATH ""
+# define FLOOR_PATH ""
+# define COLLECT_PATH ""
+# define EXIT_PATH ""
+# define CHAR_PATH ""
+# define CHAR_L_PATH ""
+# define CHAR_R_PATH ""
+# define CHAR_U_PATH ""
 
-	if (argc > 2)
-		return (ft_error());
-	if (argc == 2 && argcheck_file_types(argv[2]))
-		start_game(&game, argv[1]);
-	else
-		return (ft_error());
-	return (0);
-}
-
-static void start_game(t_game *game, char *path)
-{
-	create_maps(game, path);
-	create_windows(game);
-	
-}
+#endif
