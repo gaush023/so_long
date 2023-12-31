@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:37:15 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/31 00:12:20 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/01 01:36:37 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	count_elements(t_counter *cnt, char c)
 		cnt->empty++;
 }
 
-bool	is_double_line(char *s, int i) 
+bool	is_double_line(char *s, int i)
 {
 	return ((s[i] == '\n') && (ft_strchr("\n\0", s[i + 1])));
 }
