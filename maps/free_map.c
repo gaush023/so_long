@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_error.c                                  :+:      :+:    :+:   */
+/*   free_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/03 15:39:17 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/29 14:02:22 by sagemura         ###   ########.fr       */
+/*   Created: 2024/01/01 11:14:27 by sagemura          #+#    #+#             */
+/*   Updated: 2024/01/01 11:15:10 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	ft_putstr_error(char *str)
+void	free_map(t_game *game)
 {
-	size_t	n;
-
-	n = 0;
-	while (str[n] != '/0')
+	while (game->plot.height > 0)
 	{
-		write(2, &str[n], 1);
-		n++;
+		free(game->plot.map[game->plot.height - 1]);
+		game->plot.height--;
 	}
-	return (-1);
+	free(game->plot.map);
+	return ;
 }

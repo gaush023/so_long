@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 19:47:08 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/01 04:07:15 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/01 12:36:37 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,22 @@
 # define KEY_RELEASE_MASK 2
 # define NO_EVENT_MASK 0
 # define EXPOSURE_MASK 32768
+
+enum			e_direction
+{
+	up,
+	right,
+	down,
+	left,
+};
+
+enum			e_state
+{
+	close_event = 0,
+	error = -1,
+	file_error = -2,
+	map_char_error = -3,
+};
 
 typedef struct s_maps
 {
