@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:15:59 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/01 14:07:12 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/04 12:16:26 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ static void start_game(t_game *game, char *path)
 	init_hook(game, KEY_RELEASE, KEY_RELEASE_MASK, cofirm_key);
 	init_hook(game, DESTROY_NOTIFY, NO_EVENT_MASK, red_cross);
 	init_hook(game, EXPOSE, EXPOSURE_MASK, mini_marker);
+	mlx_loop(game->mlx_pointer);
 }
-

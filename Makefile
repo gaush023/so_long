@@ -3,7 +3,9 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 MLXFLAGS = -lmlx -framework OpenGL -framework AppKit
 
-SRC = test.c
+SRC = main.c 
+
+
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)

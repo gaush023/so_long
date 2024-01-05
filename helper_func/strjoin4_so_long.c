@@ -6,13 +6,13 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 18:22:59 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/04 18:48:27 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/04 19:45:58 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/so_long.h"
+#include "../includes/so_long.h"
 
-static void	*strjoin4_so_long_helper(char *new_str, char *s1, char *s2,
+static char	*strjoin4_so_long_helper(char *new_str, char *s1, char *s2,
 		int flag)
 {
 	size_t	i;
@@ -34,14 +34,13 @@ static void	*strjoin4_so_long_helper(char *new_str, char *s1, char *s2,
 		j++;
 	}
 	new_str[i + j] = '\0';
+	return(new_str);
 }
 
 char	*strjoin4_so_long(char *s1, char *s2)
 {
 	char	*new_str;
 	size_t	len;
-	size_t	i;
-	size_t	j;
 	int		flag;
 
 	flag = 0;
@@ -55,6 +54,8 @@ char	*strjoin4_so_long(char *s1, char *s2)
 	new_str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!new_str)
 		return (NULL);
+	new_str = strjoin4_so_long_helper( new_str,s1,
+			s2, flag);
 	free(s1);
 	free(s2);
 	return (new_str);

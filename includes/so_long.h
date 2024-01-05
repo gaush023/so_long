@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:40:18 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/01 14:01:55 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/04 13:32:06 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strchr(const char *s, int c);
 char	**ft_split(char const *s, char c);
+void	ft_putchar_fd(int fd, char c);
 void	ft_putstr_fd(int fd, char *s);
 void	ft_putnbr_fd(int fd, int n);
 
@@ -55,12 +56,11 @@ void	free_map(t_game *game);
 void	create_windows(t_game *game);
 void	render_mapas(t_game *game);
 void	set_images(t_game *game);
-int	red_cross(t_game *game);
-
+int		red_cross(t_game *game);
+int		mini_marker(t_game *game);
 
 //movements
-int	cofirm_key(int keycode, t_game *game);
+int		cofirm_key(int keycode, t_game *game);
 void	print_movements(t_game *game);
-
 
 #endif

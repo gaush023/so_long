@@ -6,11 +6,11 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:59:12 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/04 17:40:31 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/04 19:43:01 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/so_long.h"
+#include "../includes/so_long.h"
 
 static char	*next_point(char *str)
 {
@@ -47,7 +47,7 @@ static char	*extract_next_line(char *str)
 	return (line);
 }
 
-static char	*stock_str(char *ptr, char *temp, int rv)
+static char	*stocks_ptr(char *ptr, char *temp, int rv)
 {
 	char	*new_str;
 
@@ -72,7 +72,7 @@ char	*gnl4so_long(int fd)
 	char		*temp;
 	int			rv;
 
-	if (fd < 0 || BUFFER_SIZE)
+	if (fd < 0 || !BUFFER_SIZE)
 		return (NULL);
 	temp = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (!temp)
