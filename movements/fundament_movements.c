@@ -6,25 +6,25 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 03:57:05 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/01 05:07:00 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/13 22:54:03 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-int	cofirm_key(int keycode, t_game *game)
+int	confirm_key(int keycode, t_game *game)
 {
 	game->character.mem = 0;
 	if (keycode == ESC)
-		finish();
+		close_game("", game, close_event);
 	else if (keycode == UP)
-		move_up();
+		move_up(game);
 	else if (keycode == DOWN)
-		move_down();
+		move_down(game);
 	else if (keycode == LEFT)
-		move_left();
+		move_left(game);
 	else if (keycode == RIGHT)
-		move_right();
+		move_right(game);
 	return (0);
 }
 

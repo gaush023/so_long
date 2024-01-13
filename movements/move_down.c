@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 12:31:55 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/01 13:48:33 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/13 23:31:01 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	check_down(t_game *game)
 		if (!is_up_down(game))
 		{
 			game->character.y += SIZE;
-			render_mapas(game);
+			render_maps(game);
 			print_movements(game);
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 12:33:40 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/01 12:44:09 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/13 23:31:09 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	check_left(t_game *game)
 		if (!is_left_wall(game))
 		{
 			game->character.x -= SIZE;
-			render_mapas(game);
+			render_maps(game);
 			print_movements(game);
 		}
 	}

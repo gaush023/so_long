@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 13:13:10 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/29 14:05:45 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/14 01:58:35 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ char	*ft_strchr(const char *s, int c)
 	size_t i;
 
 	i = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if (s[i] == c)
+	if (c == '\0')
 		return ((char *)&s[i]);
-    return (NULL);
+	return (NULL);
 }

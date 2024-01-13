@@ -6,11 +6,11 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:37:15 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/01 01:36:37 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/14 01:10:50 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/so_long.h"
+#include "../includes/so_long.h"
 
 static int	open_file(char *path)
 {
@@ -19,23 +19,23 @@ static int	open_file(char *path)
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
 	{
-		ft_putstr_error("Error opening file!");
+		close_game("Cant open the file!", NULL, error);
 		exit(1);
 	}
 	return (fd);
 }
 
-void	check_elements_numbers(t_counter *game, t_counter *cnt, char *temp)
+static void	check_elements_numbers(t_counter *cnt, char *temp)
 {
 	if (!(cnt->collectible > 0 && cnt->exit == 1 && cnt->start == 1
 			&& cnt->empty > 0))
 	{
 		free(temp);
-		// 見直す必要があり
+		close_game("file error", NULL, file_error);
 	}
 }
 
-t_counter	set_counter(void)
+static t_counter	set_counter(void)
 {
 	t_counter	counter;
 
@@ -47,7 +47,7 @@ t_counter	set_counter(void)
 	return (counter);
 }
 
-void	count_elements(t_counter *cnt, char c)
+static void	count_elements(t_counter *cnt, char c)
 {
 	if (c == 'C')
 		cnt->collectible++;
@@ -59,12 +59,12 @@ void	count_elements(t_counter *cnt, char c)
 		cnt->empty++;
 }
 
-bool	is_double_line(char *s, int i)
+static bool	is_double_line(char *s, int i)
 {
 	return ((s[i] == '\n') && (ft_strchr("\n\0", s[i + 1])));
 }
 
-t_counter	excute_counter(char *maps_e, t_game *game)
+static t_counter	excute_counter(char *maps_e, t_game *game)
 {
 	t_counter	cnt;
 	int			i;
@@ -76,12 +76,12 @@ t_counter	excute_counter(char *maps_e, t_game *game)
 		if (is_double_line(maps_e, i))
 		{
 			free(maps_e);
-			// 見直し必要あり
+			close_game("Ops!", game, file_error);
 		}
 		count_elements(&cnt, maps_e[i]);
 		i++;
 	}
-	check_elements_numbers(game, &cnt, maps_e);
+	check_elements_numbers(&cnt, maps_e);
 	return (cnt);
 }
 

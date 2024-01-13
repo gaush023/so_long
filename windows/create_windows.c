@@ -6,18 +6,11 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 00:52:36 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/01 01:43:17 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/07 07:20:35 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-// bool	is_size(t_game *game)
-// {
-// 	t_point	screen_size;
-
-// 	screen_size.x =
-// }
 
 void	create_windows(t_game *game)
 {

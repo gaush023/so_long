@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:59:12 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/04 19:43:01 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/14 00:25:47 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static char	*next_point(char *str)
 	char	*point;
 	char	*next_point;
 
-	point = ft_strrchr(str, '\n');
+	point = ft_strchr(str, '\n');
 	if (!point)
 	{
 		free(str);
@@ -39,7 +39,7 @@ static char	*extract_next_line(char *str)
 
 	if (!str || !str[0])
 		return (NULL);
-	new_line_pos = ft_strrchr(str, '\n');
+	new_line_pos = ft_strchr(str, '\n');
 	if (new_line_pos)
 		line = ft_strndup(str, new_line_pos - str + 1);
 	else
@@ -78,7 +78,7 @@ char	*gnl4so_long(int fd)
 	if (!temp)
 		return (NULL);
 	rv = 1;
-	while (rv != 0 && !(ptr && ft_strrchr(ptr, '\n')))
+	while (rv != 0 && !(ptr && ft_strchr(ptr, '\n')))
 	{
 		rv = read(fd, temp, BUFFER_SIZE);
 		if (rv == -1)
@@ -93,3 +93,26 @@ char	*gnl4so_long(int fd)
 	ptr = next_point(ptr);
 	return (temp);
 }
+
+// #include <fcntl.h>
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int		fd;
+// 	char	*line;
+
+// 	fd = open("file_list.txt", O_RDONLY);
+// 	if (fd == -1)
+// 	{
+// 		printf("Failed to open file\n");
+// 		return (1);
+// 	}
+// 	while ((line = gnl4so_long(fd)))
+// 	{
+// 		printf("%s", line);
+// 		free(line);
+// 	}
+// 	close(fd);
+// 	return (0);
+// }

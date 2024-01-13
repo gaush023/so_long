@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 19:47:08 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/01 12:36:37 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/14 00:47:44 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ typedef struct s_maps
 	int			height;
 	int			length;
 	char		*line;
+	char		*temp;
+
 }				t_maps;
 
 typedef struct s_img

@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 16:28:57 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/29 13:54:59 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/14 00:16:04 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,17 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!ptr)
 		return (NULL);
 	i = 0;
-	while (s1)
+	while (s1[i] != '\0')
 	{
 		ptr[i] = s1[i];
 		i++;
 	}
 	j = 0;
-	while (s2)
+	while (s2[j] != '\0')
 	{
 		ptr[i + j] = s2[j];
 		j++;
 	}
+	ptr[i + j] = '\0';
 	return (ptr);
 }

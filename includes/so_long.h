@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:40:18 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/04 13:32:06 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/13 23:30:05 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,17 +50,25 @@ char	*strjoin4_so_long(char *s1, char *s2);
 void	close_game(char *message, t_game *game, enum e_state i);
 
 //maps
+void	create_maps(t_game *game, char *path);
 void	free_map(t_game *game);
+int		confirm_len_map(char **map, t_game *game);
 
 //windows
 void	create_windows(t_game *game);
-void	render_mapas(t_game *game);
+void	render_maps(t_game *game);
 void	set_images(t_game *game);
+void	set_player(t_game *game);
 int		red_cross(t_game *game);
 int		mini_marker(t_game *game);
 
 //movements
-int		cofirm_key(int keycode, t_game *game);
+
+int		confirm_key(int keycode, t_game *game);
+void	move_up(t_game *game);
+void	move_down(t_game *game);
+void	move_right(t_game *game);
+void	move_left(t_game *game);
 void	print_movements(t_game *game);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 04:25:21 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/01 12:37:01 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/13 23:31:22 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ static bool	is_up_wall(t_game *game)
 			/ SIZE][game->character.x / SIZE] != '1'));
 }
 
-static void	check_up(t_game *game)
+static void	check_pos(t_game *game)
 {
 	if (game->character.y > SIZE)
 	{
 		if (!is_up_wall(game))
 		{
 			game->character.y -= SIZE;
-			render_mapas(game);
+			render_maps(game);
 			print_movements(game);
 		}
 	}

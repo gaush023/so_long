@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:39:17 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/01 14:00:12 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/13 23:37:20 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,16 @@ void	close_game(char *message, t_game *game, enum e_state i)
 	}
 	else if (i == error)
 	{
-		ft_putstr_fd(-1, message);
+		ft_putstr_fd(2, message);
 		exit(1);
 	}
 	else if (i == file_error)
 	{
-		ft_putstr_fd(-1, message);
+		ft_putstr_fd(2, message);
 		exit(1);
 	}
-	ft_putstr_fd(-1, message);
-	write(1, "\n", 1);
+	ft_putstr_fd(2, message);
+	write(2, "\n", 1);
 	delite_images(game);
 	exit(1);
 	return ;
