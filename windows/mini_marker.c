@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 14:10:20 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/13 23:31:36 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/29 02:46:44 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@ int	mini_marker(t_game *game)
 	else if (game->character.mem == down)
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 				game->character.ptr, game->character.x, game->character.y);
-	else if(game->character.mem == right)
-        mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,game->character_r.ptr, game->character.x, game->character.y);
-    else if (game->character.mem == left)
+	else if (game->character.mem == right)
+		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
+				game->character_r.ptr, game->character.x, game->character.y);
+	else if (game->character.mem == left)
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
 				game->character_l.ptr, game->character.x, game->character.y);
-    return (0);
+	return (0);
 }

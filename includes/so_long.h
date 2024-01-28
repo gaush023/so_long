@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:40:18 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/13 23:30:05 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/29 02:52:58 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 23
+#  define BUFFER_SIZE 100
 # endif
 
 # define SIZE 32
