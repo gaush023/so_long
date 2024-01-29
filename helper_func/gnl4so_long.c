@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:59:12 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/14 00:25:47 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/29 18:51:43 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ char	*gnl4so_long(int fd)
 // 	int		fd;
 // 	char	*line;
 
-// 	fd = open("file_list.txt", O_RDONLY);
+// 	fd = open("../test.ber", O_RDONLY);
 // 	if (fd == -1)
 // 	{
 // 		printf("Failed to open file\n");

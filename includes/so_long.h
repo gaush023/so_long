@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:40:18 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/29 17:44:34 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/29 19:16:23 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 100
 # endif
-
-# define SIZE 32
-# define WINDOW_NAME "./so_long"
 
 # include "path.h"
 # include "structs.h"

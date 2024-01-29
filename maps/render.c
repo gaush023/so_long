@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 07:27:51 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/14 02:25:37 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/29 19:00:21 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ bool	is_valid_assets(t_game *game, int y, int x)
 	if (game->plot.map[y][x] == '\0')
 		return (true);
 	if (!(ft_strchr("01CEP", game->plot.map[y][x])))
-			return (false);
+		return (false);
 	return (true);
 }
 
@@ -44,17 +44,17 @@ void	set_map_assets(t_game *game, int y, int x)
 		game->exit.x = x * SIZE;
 		game->exit.y = y * SIZE;
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-				game->exit.ptr, (x * SIZE), (y * SIZE));
+			game->exit.ptr, (x * SIZE), (y * SIZE));
 	}
 	else if (game->plot.map[y][x] == '1')
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-				game->wall.ptr, (x * SIZE), (y * SIZE));
+			game->wall.ptr, (x * SIZE), (y * SIZE));
 	else if (game->plot.map[y][x] == 'C')
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-				game->collect.ptr, (x * SIZE), (y * SIZE));
+			game->collect.ptr, (x * SIZE), (y * SIZE));
 	else
 		mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-				game->floor.ptr, (x * SIZE), (y * SIZE));
+			game->floor.ptr, (x * SIZE), (y * SIZE));
 }
 
 static void	check_map_assets(t_game *game, int y, int x)

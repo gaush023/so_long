@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 19:47:08 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/29 17:50:56 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/29 19:16:31 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@
 # define KEY_RELEASE_MASK 2
 # define NO_EVENT_MASK 0
 # define EXPOSURE_MASK 32768
+
+# define SIZE 32
+# define WINDOW_NAME "./so_long"
 
 enum			e_direction
 {
