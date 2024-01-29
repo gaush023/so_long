@@ -6,29 +6,30 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 19:47:08 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/29 19:16:31 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/30 00:30:33 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
 
-# define UP 119
-# define DOWN 115
-# define LEFT 97
-# define RIGHT 100
-# define ESC 65307
 
-# define KEY_RELEASE 3
-# define DESTROY_NOTIFY 17
-# define EXPOSE 12
+# define LEFT 0
+# define RIGHT 2
+# define UP 13
+# define DOWN 1
+# define ESC 53
 
-# define KEY_RELEASE_MASK 2
-# define NO_EVENT_MASK 0
-# define EXPOSURE_MASK 32768
+#define KEY_RELEASE 3
+#define DESTROY_NOTIFY 17
+#define EXPOSE 12
 
-# define SIZE 32
-# define WINDOW_NAME "./so_long"
+#define KEY_RELEASE_MASK 2
+#define NO_EVENT_MASK 0
+#define EXPOSURE_MASK 32768
+
+#define SIZE 32
+#define WINDOW_NAME "./so_long"
 
 enum			e_direction
 {

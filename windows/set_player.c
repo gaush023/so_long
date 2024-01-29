@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 21:48:15 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/29 19:20:17 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/29 23:56:29 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,10 @@ void	set_player(t_game *game)
 		point.x = 0;
 		while (game->plot.map[point.y][point.x])
 		{
-			printf("%c", game->plot.map[point.y][point.x]);
 			if (game->plot.map[point.y][point.x] == 'P')
 			{
 				game->character.x = (SIZE * point.x);
 				game->character.y = (SIZE * point.y);
-				printf("%d\n%d\n", point.x, point.y);
-				printf("%d\n%d\n", game->character.x, game->character.y);
 				render_player(game);
 				return ;
 			}
