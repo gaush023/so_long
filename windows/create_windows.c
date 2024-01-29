@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 00:52:36 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/07 07:20:35 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/29 18:13:04 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 void	create_windows(t_game *game)
 {
 	game->mlx_pointer = mlx_init();
-	game->window_pointer = mlx_new_window(game->mlx_pointer,
-											(game->plot.length * SIZE),
-											(game->plot.height * SIZE),
-											WINDOW_NAME);
+	game->window_pointer = mlx_new_window(game->mlx_pointer, (game->plot.length
+				* SIZE), (game->plot.height * SIZE), WINDOW_NAME);
 }
 
 t_img	new_sprite(void *mlx, char *path)

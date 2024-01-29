@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:15:59 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/29 02:21:06 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/29 17:21:04 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,3 @@ int	main(int argc, char *argv[])
 		close_game("invalid args!", NULL, error);
 	return (0);
 }
-

@@ -6,17 +6,17 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 19:47:08 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/14 00:47:44 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/29 17:50:56 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
 
-# define UP 111
-# define DOWN 116
-# define LEFT 113
-# define RIGHT 114
+# define UP 119
+# define DOWN 115
+# define LEFT 97
+# define RIGHT 100
 # define ESC 65307
 
 # define KEY_RELEASE 3
