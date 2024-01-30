@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 00:12:53 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/14 01:11:42 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:17:30 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	confirm_line(char **map, t_game *game)
 		if (point.x != point.y)
 		{
 			free_map(game);
-			close_game("Why?", game, file_error);
+			close_game("Error", game, file_error);
 		}
 		i++;
 	}

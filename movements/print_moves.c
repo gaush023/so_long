@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 05:08:28 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/13 23:28:50 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/30 17:37:44 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	print_movements(t_game *game)
 		game->counts.collectible--;
 	}
 	else if (game->plot.map[game->character.y / SIZE][game->character.x
-			/ SIZE] == 'E' && game->counts.collectible == 0)
+		/ SIZE] == 'E' && game->counts.collectible == 0)
 	{
-		close_game("", game, close_event);
+		close_game("Thank you, bye:)", game, close_event);
 	}
 	ft_putstr_fd(1, "\rMovements: ");
 	ft_putnbr_fd(1, game->counts.movements);

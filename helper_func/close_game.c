@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:39:17 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/13 23:37:20 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:20:48 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@ static void	delite_images(t_game *game)
 	mlx_destroy_image(game->mlx_pointer, game->collect.ptr);
 	mlx_destroy_image(game->mlx_pointer, game->exit.ptr);
 	mlx_destroy_image(game->mlx_pointer, game->character.ptr);
-	mlx_destroy_image(game->mlx_pointer, game->character_l.ptr);
-	mlx_destroy_image(game->mlx_pointer, game->character_r.ptr);
-	mlx_destroy_image(game->mlx_pointer, game->character_u.ptr);
 	mlx_destroy_window(game->mlx_pointer, game->window_pointer);
 	free_map(game);
 	free(game->mlx_pointer);
@@ -32,6 +29,8 @@ void	close_game(char *message, t_game *game, enum e_state i)
 {
 	if (i == close_event)
 	{
+		if (game->counts.movements > 0)
+			write(1, "\n", 1);
 		ft_putstr_fd(1, message);
 		write(1, "\n", 1);
 		delite_images(game);
@@ -40,16 +39,18 @@ void	close_game(char *message, t_game *game, enum e_state i)
 	else if (i == error)
 	{
 		ft_putstr_fd(2, message);
+		write(2, "\n", 1);
 		exit(1);
 	}
 	else if (i == file_error)
 	{
 		ft_putstr_fd(2, message);
+		write(2, "\n", 1);
 		exit(1);
 	}
 	ft_putstr_fd(2, message);
-	write(2, "\n", 1);
+	write(1, "\n", 1);
 	delite_images(game);
-	exit(1);
+	exit(0);
 	return ;
 }

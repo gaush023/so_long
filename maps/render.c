@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 07:27:51 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/29 19:00:21 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:13:27 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ void	set_map_assets(t_game *game, int y, int x)
 static void	check_map_assets(t_game *game, int y, int x)
 {
 	if (!is_surrounded_by_walls(game, y, x))
-		close_game("hey!", game, file_error);
+		close_game("Error", game, file_error);
 	else if (!is_rectangular(game))
-		close_game("noooo", game, file_error);
+		close_game("Error", game, file_error);
 	else if (!is_valid_assets(game, y, x))
-		close_game("oh, my", game, file_error);
+		close_game("Error", game, file_error);
 	set_map_assets(game, y, x);
 }
 

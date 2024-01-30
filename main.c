@@ -6,11 +6,12 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:15:59 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/29 17:21:04 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:13:00 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/so_long.h"
+
 
 static void	init_hook(t_game *game, int event, int mask, int (*f)())
 {
@@ -36,6 +37,6 @@ int	main(int argc, char *argv[])
 	if (argc == 2 && check_file_types(argv[1]))
 		start_game(&game, argv[1]);
 	else
-		close_game("invalid args!", NULL, error);
+		close_game("Error", NULL, error);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 12:31:55 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/13 23:31:01 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:03:23 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static bool	is_up_down(t_game *game)
 
 static void	check_down(t_game *game)
 {
-	if (game->character.y > ((game->plot.height * SIZE) - (SIZE * 2)))
+	if (game->character.y < ((game->plot.height * SIZE) - (SIZE * 2)))
 	{
 		if (!is_up_down(game))
 		{
@@ -34,7 +34,7 @@ static void	check_down(t_game *game)
 void	move_down(t_game *game)
 {
 	check_down(game);
-	game->character.mem = down;
 	mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->character.ptr, game->character.x, game->character.y);
+		game->character.ptr, game->character.x, game->character.y);
+	return ;
 }

@@ -1,5 +1,5 @@
 /* XPM */
-static char * pac_open_right_xpm[] = {
+static char * pac_right_xpm[] = {
 "32 32 2 1",
 " 	c None",
 ".	c #FFF100",

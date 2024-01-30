@@ -6,13 +6,12 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 19:47:08 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/30 00:30:33 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/30 19:52:29 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
-
 
 # define LEFT 0
 # define RIGHT 2
@@ -20,24 +19,16 @@
 # define DOWN 1
 # define ESC 53
 
-#define KEY_RELEASE 3
-#define DESTROY_NOTIFY 17
-#define EXPOSE 12
+# define KEY_RELEASE 3
+# define DESTROY_NOTIFY 17
+# define EXPOSE 12
 
-#define KEY_RELEASE_MASK 2
-#define NO_EVENT_MASK 0
-#define EXPOSURE_MASK 32768
+# define KEY_RELEASE_MASK 2
+# define NO_EVENT_MASK 0
+# define EXPOSURE_MASK 32768
 
-#define SIZE 32
-#define WINDOW_NAME "./so_long"
-
-enum			e_direction
-{
-	up,
-	right,
-	down,
-	left,
-};
+# define SIZE 32
+# define WINDOW_NAME "./so_long"
 
 enum			e_state
 {

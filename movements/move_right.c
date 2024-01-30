@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 12:45:18 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/13 23:31:15 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/30 17:34:59 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static void	check_right(t_game *game)
 void	move_right(t_game *game)
 {
 	check_right(game);
-	game->character.mem = right;
 	mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->character_r.ptr, game->character.x, game->character.y);
+		game->character.ptr, game->character.x, game->character.y);
 }

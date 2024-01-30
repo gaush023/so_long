@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 04:25:21 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/13 23:31:22 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:07:30 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,7 @@ static void	check_pos(t_game *game)
 void	move_up(t_game *game)
 {
 	check_pos(game);
-	game->character.mem = up;
 	mlx_put_image_to_window(game->mlx_pointer, game->window_pointer,
-			game->character_u.ptr, game->character.x, game->character.y);
+		game->character.ptr, game->character.x, game->character.y);
 	return ;
 }

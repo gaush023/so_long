@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:37:15 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/29 18:59:58 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:16:47 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	open_file(char *path)
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
 	{
-		close_game("Cant open the file!", NULL, error);
+		close_game("Error", NULL, error);
 		exit(1);
 	}
 	return (fd);
@@ -31,7 +31,7 @@ static void	check_elements_numbers(t_counter *cnt, char *temp)
 			&& cnt->empty > 0))
 	{
 		free(temp);
-		close_game("file error", NULL, file_error);
+		close_game("Error", NULL, file_error);
 	}
 }
 
@@ -76,7 +76,7 @@ static t_counter	excute_counter(char *maps_e, t_game *game)
 		if (is_double_line(maps_e, i))
 		{
 			free(maps_e);
-			close_game("Ops!", game, file_error);
+			close_game("Error", game, file_error);
 		}
 		count_elements(&cnt, maps_e[i]);
 		i++;
