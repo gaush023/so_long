@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:39:17 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/30 20:20:48 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/02/01 21:34:34 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,13 @@ void	close_game(char *message, t_game *game, enum e_state i)
 {
 	if (i == close_event)
 	{
-		if (game->counts.movements > 0)
-			write(1, "\n", 1);
+		write(1, "\n", 1);
 		ft_putstr_fd(1, message);
 		write(1, "\n", 1);
 		delite_images(game);
 		exit(0);
 	}
-	else if (i == error)
-	{
-		ft_putstr_fd(2, message);
-		write(2, "\n", 1);
-		exit(1);
-	}
-	else if (i == file_error)
+	else if (i == error || i == file_error)
 	{
 		ft_putstr_fd(2, message);
 		write(2, "\n", 1);

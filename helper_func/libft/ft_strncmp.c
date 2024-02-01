@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 19:18:41 by sagemura          #+#    #+#             */
-/*   Updated: 2023/12/29 13:55:05 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:44:23 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (i < n && (str1[i] || str2[i]))
