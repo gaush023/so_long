@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 16:16:48 by sagemura          #+#    #+#             */
-/*   Updated: 2024/02/06 04:24:08 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/02/06 14:22:21 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,74 +55,79 @@ static t_counter_copy	is_assets(t_game *game, t_check c_pos,
 	return (copy_counter);
 }
 
-static void	check_up(t_game *game, t_check c_pos, t_counter_copy copy_counter)
+static t_counter_copy	check_up(t_game *game, t_check c_pos, t_counter_copy copy_counter)
 {
 	c_pos.y = c_pos.y - 1;
 	while (game->plot_copy.map[c_pos.y][c_pos.x] != '1'
 		&& game->plot_copy.map[c_pos.y][c_pos.x] != 'D')
 	{
-		is_assets(game, c_pos, copy_counter);
+		copy_counter = is_assets(game, c_pos, copy_counter);
 		game->plot_copy.map[c_pos.y][c_pos.x] = 'D';
 		check_left(game, c_pos, copy_counter);
 		check_right(game, c_pos, copy_counter);
 		c_pos.y--;
 	}
+	return (copy_counter);
 }
 
-static void	check_down(t_game *game, t_check c_pos, t_counter_copy copy_counter)
+static t_counter_copy	check_down(t_game *game, t_check c_pos, t_counter_copy copy_counter)
 {
 	c_pos.y = c_pos.y + 1;
 	while (game->plot_copy.map[c_pos.y][c_pos.x] != '1'
 		&& game->plot_copy.map[c_pos.y][c_pos.x] != 'D')
 	{
-		is_assets(game, c_pos, copy_counter);
+		copy_counter = is_assets(game, c_pos, copy_counter);
 		game->plot_copy.map[c_pos.y][c_pos.x] = 'D';
 		check_left(game, c_pos, copy_counter);
 		check_right(game, c_pos, copy_counter);
 		c_pos.y++;
 	}
+	return (copy_counter);
 }
 
-static void	check_right(t_game *game, t_check c_pos,
+static t_counter_copy	check_right(t_game *game, t_check c_pos,
 		t_counter_copy copy_counter)
 {
 	c_pos.x = c_pos.x + 1;
 	while (game->plot_copy.map[c_pos.y][c_pos.x] != '1'
 		&& game->plot_copy.map[c_pos.y][c_pos.x] != 'D')
 	{
-		is_assets(game, c_pos, copy_counter);
+		copy_counter = is_assets(game, c_pos, copy_counter);
 		game->plot_copy.map[c_pos.y][c_pos.x] = 'D';
 		check_up(game, c_pos, copy_counter);
 		check_down(game, c_pos, copy_counter);
 		c_pos.x++;
 	}
+	return (copy_counter);
 }
 
-static void	check_left(t_game *game, t_check c_pos, t_counter_copy copy_counter)
+static t_counter_copy	check_left(t_game *game, t_check c_pos, t_counter_copy copy_counter)
 {
 	c_pos.x = c_pos.x - 1;
 	while (game->plot_copy.map[c_pos.y][c_pos.x] != '1'
 		&& game->plot_copy.map[c_pos.y][c_pos.x] != 'D')
 	{
-		is_assets(game, c_pos, copy_counter);
+		copy_counter = is_assets(game, c_pos, copy_counter);
 		game->plot_copy.map[c_pos.y][c_pos.x] = 'D';
 		check_up(game, c_pos, copy_counter);
 		check_down(game, c_pos, copy_counter);
 		c_pos.x--;
 	}
+	return (copy_counter);
 }
 
-static void	check_map(t_game *game, t_check c_pos, t_counter_copy copy_counter)
+static t_counter_copy	check_map(t_game *game, t_check c_pos, t_counter_copy copy_counter)
 {
 	while (game->plot_copy.map[c_pos.y][c_pos.x] != '1')
 	{
-		is_assets(game, c_pos, copy_counter);
+		copy_counter =  is_assets(game, c_pos, copy_counter);
 		game->plot_copy.map[c_pos.y][c_pos.x] = 'D';
 		check_up(game, c_pos, copy_counter);
 		check_down(game, c_pos, copy_counter);
 		check_left(game, c_pos, copy_counter);
 		c_pos.x++;
 	}
+	return (copy_counter);
 }
 
 static void	confirm_map_error(t_counter_copy cnt_copy, t_game *game)
