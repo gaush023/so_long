@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:39:17 by sagemura          #+#    #+#             */
-/*   Updated: 2024/02/06 17:52:06 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/02/06 21:42:57 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	close_game(char *message, t_game *game, enum e_state i)
 		write(1, "\n", 1);
 		ft_putstr_fd(1, message);
 		write(1, "\n", 1);
-		free_map(game);
 		delite_images(game);
+		free_map(game);
 		exit(0);
 	}
 	else if (i == error || i == file_error)

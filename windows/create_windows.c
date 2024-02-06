@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 00:52:36 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/29 18:13:04 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/02/06 20:34:37 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,5 @@ void	set_images(t_game *game)
 	game->collect = new_sprite(game->mlx_pointer, COLLECT_PATH);
 	game->exit = new_sprite(game->mlx_pointer, EXIT_PATH);
 	game->character = new_sprite(game->mlx_pointer, CHAR_PATH);
-	game->character_l = new_sprite(game->mlx_pointer, CHAR_L_PATH);
-	game->character_r = new_sprite(game->mlx_pointer, CHAR_R_PATH);
-	game->character_u = new_sprite(game->mlx_pointer, CHAR_U_PATH);
 	return ;
 }
