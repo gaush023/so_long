@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map.c                                         :+:      :+:    :+:   */
+/*   find_P_pos.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 11:14:27 by sagemura          #+#    #+#             */
-/*   Updated: 2024/02/06 17:55:04 by sagemura         ###   ########.fr       */
+/*   Created: 2024/02/01 16:16:48 by sagemura          #+#    #+#             */
+/*   Updated: 2024/02/06 15:33:15 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	free_map(t_game *game)
+t_check	find_P_pos(t_game *game)
 {
-	while (game->plot.height > 0)
+	t_check	c_pos;
+
+	c_pos.y = 0;
+	while (game->plot.map[c_pos.y])
 	{
-		free(game->plot.map[game->plot.height - 1]);
-		game->plot.height--;
+		c_pos.x = 0;
+		while (game->plot.map[c_pos.y][c_pos.x])
+		{
+			if (game->plot.map[c_pos.y][c_pos.x] == 'P')
+				return (c_pos);
+			c_pos.x++;
+		}
+		c_pos.y++;
 	}
-	free(game->plot.map);
-	return ;
+	return (c_pos);
 }
+

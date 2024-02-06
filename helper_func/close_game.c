@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:39:17 by sagemura          #+#    #+#             */
-/*   Updated: 2024/02/01 21:34:34 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:52:06 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ static void	delite_images(t_game *game)
 	mlx_destroy_image(game->mlx_pointer, game->exit.ptr);
 	mlx_destroy_image(game->mlx_pointer, game->character.ptr);
 	mlx_destroy_window(game->mlx_pointer, game->window_pointer);
-	free_map(game);
-	free(game->mlx_pointer);
 	return ;
 }
 
@@ -32,6 +30,7 @@ void	close_game(char *message, t_game *game, enum e_state i)
 		write(1, "\n", 1);
 		ft_putstr_fd(1, message);
 		write(1, "\n", 1);
+		free_map(game);
 		delite_images(game);
 		exit(0);
 	}

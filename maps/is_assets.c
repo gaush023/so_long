@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map.c                                         :+:      :+:    :+:   */
+/*   is_assets.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/01 11:14:27 by sagemura          #+#    #+#             */
-/*   Updated: 2024/02/06 17:55:04 by sagemura         ###   ########.fr       */
+/*   Created: 2024/02/01 16:16:48 by sagemura          #+#    #+#             */
+/*   Updated: 2024/02/06 15:53:53 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
 
-void	free_map(t_game *game)
+void	is_assets(t_game *game, t_check c_pos, t_counter_copy *cnt_copy)
 {
-	while (game->plot.height > 0)
-	{
-		free(game->plot.map[game->plot.height - 1]);
-		game->plot.height--;
-	}
-	free(game->plot.map);
-	return ;
+	if (game->plot_copy.map[c_pos.y][c_pos.x] == 'C')
+		cnt_copy->collectible = cnt_copy->collectible - 1;
+	else if (game->plot_copy.map[c_pos.y][c_pos.x] == 'E')
+		cnt_copy->exit = cnt_copy->exit - 1;
 }

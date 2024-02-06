@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:40:18 by sagemura          #+#    #+#             */
-/*   Updated: 2024/02/01 19:47:17 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:55:17 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,9 @@ void		free_map(t_game *game);
 int			confirm_len_map(char **map, t_game *game);
 void		check_map_assets(t_game *game, int y, int x);
 t_counter	excute_counter(char *maps_e, t_game *game);
+t_check		find_P_pos(t_game *game);
+void		is_assets(t_game *game, t_check c_pos, t_counter_copy *cnt_copy);
+void		is_map(t_game *game, t_counter_copy *cnt_copy);
 void		is_goal_possible(t_game *game);
 
 // windows
@@ -63,7 +66,6 @@ int			red_cross(t_game *game);
 int			mini_marker(t_game *game);
 
 // movements
-
 int			confirm_key(int keycode, t_game *game);
 void		move_up(t_game *game);
 void		move_down(t_game *game);
