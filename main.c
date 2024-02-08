@@ -6,11 +6,16 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 15:15:59 by sagemura          #+#    #+#             */
-/*   Updated: 2024/02/06 20:39:44 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:35:15 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/so_long.h"
+
+__attribute__((destructor))
+static void destructor() {
+    system("leaks -q so_long");
+}
 
 static void	init_hook(t_game *game, int event, int mask, int (*f)())
 {

@@ -6,7 +6,7 @@
 #    By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/07 07:03:58 by sagemura          #+#    #+#              #
-#    Updated: 2024/02/06 21:56:08 by sagemura         ###   ########.fr        #
+#    Updated: 2024/02/08 17:28:00 by sagemura         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,7 @@ MOVEMENTSNAME = movements.a
 WINDOWSNAME = windows.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror 
-LEFLAGS = -fsanitize=leaks
+CFLAGS = -Wall -Wextra -Werror
 MLXFLAGS = -lmlx -framework OpenGL -framework AppKit
 SRC = main.c
 HELPERFUNCDIR = ./helper_func
@@ -33,7 +32,7 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): makehelperfunc makemaps makemovements makewindows $(OBJ)
-	$(CC) $(CFLAGS) $(LEFLAGS) $(OBJ) -o $(NAME) $(LIBFTDIR)/$(LIBFTNAME) $(HELPERFUNCDIR)/$(HELPERFUNCNAME)  $(MAPSDIR)/$(MAPSNAME) $(MOVEMENTSDIR)/$(MOVEMENTSNAME) $(WINDOWSDIR)/$(WINDOWSNAME) $(MLXFLAGS)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(LIBFTDIR)/$(LIBFTNAME) $(HELPERFUNCDIR)/$(HELPERFUNCNAME)  $(MAPSDIR)/$(MAPSNAME) $(MOVEMENTSDIR)/$(MOVEMENTSNAME) $(WINDOWSDIR)/$(WINDOWSNAME) $(MLXFLAGS)
 
 makehelperfunc:
 	make -C $(HELPERFUNCDIR)

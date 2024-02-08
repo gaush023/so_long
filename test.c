@@ -1,5 +1,5 @@
-#include <mlx.h>
 #include <stdio.h>
+#include <mlx.h>
 
 int	main(void)
 {
@@ -22,9 +22,8 @@ int	main(void)
 	}
 	// "example.xpm" はあなたのXPMファイル名に置き換えてください。
 	img_ptr = mlx_xpm_file_to_image(mlx_ptr,
-									"/Users/shuga/Desktop/42/so_long/includes/img/Other/Portal/portal.xpm",
-										& img_width,
-									&img_height);
+			"/Users/shuga/Desktop/42/so_long/includes/img/Other/Portal/portal.xpm",
+			&img_width, &img_height);
 	if (!img_ptr)
 	{
 		fprintf(stderr, "Error: Failed to load XPM image.\n");
