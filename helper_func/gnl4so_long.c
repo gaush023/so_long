@@ -6,11 +6,16 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:59:12 by sagemura          #+#    #+#             */
-/*   Updated: 2024/01/29 18:51:43 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/02/08 20:39:34 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
+
+__attribute__((destructor))
+static void destructor() {
+    system("leaks -q a.out");
+}
 
 static char	*next_point(char *str)
 {
@@ -94,25 +99,28 @@ char	*gnl4so_long(int fd)
 	return (temp);
 }
 
-// #include <fcntl.h>
-// #include <stdio.h>
+#include <fcntl.h>
+#include <stdio.h>
 
-// int	main(void)
-// {
-// 	int		fd;
-// 	char	*line;
+int	main(void)
+{
+	int		fd;
+	char	*line;
 
-// 	fd = open("../test.ber", O_RDONLY);
-// 	if (fd == -1)
-// 	{
-// 		printf("Failed to open file\n");
-// 		return (1);
-// 	}
-// 	while ((line = gnl4so_long(fd)))
-// 	{
-// 		printf("%s", line);
-// 		free(line);
-// 	}
-// 	close(fd);
-// 	return (0);
-// }
+	fd = open("../test.ber", O_RDONLY);
+	if (fd == -1)
+	{
+		printf("Failed to open file\n");
+		return (1);
+	}
+	while ((line = gnl4so_long(fd)))
+	{
+		printf("%s", line);
+		free(line);
+	}
+	close(fd);
+	system("leaks -q a.out");
+	while (1)
+	;
+	return (0);
+}

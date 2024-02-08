@@ -6,7 +6,7 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:37:15 by sagemura          #+#    #+#             */
-/*   Updated: 2024/02/08 17:32:58 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/02/08 19:18:28 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static int	open_file(char *path)
 static void	read_maps(t_game *game, int fd)
 {
 	char	*temp;
+	char	*newline;
 
 	temp = ft_strdup("");
 	game->plot.height = 0;
@@ -36,8 +37,11 @@ static void	read_maps(t_game *game, int fd)
 		game->plot.line = gnl4so_long(fd);
 		if (game->plot.line == NULL)
 			break ;
-		temp = strjoin4_so_long(temp, game->plot.line);
+		newline = strjoin4_so_long(temp, game->plot.line);
 		free(game->plot.line);
+		if (temp == '\0')
+			free(temp);
+		temp = newline;
 		game->plot.height++;
 	}
 	game->counts = excute_counter(temp, game);
