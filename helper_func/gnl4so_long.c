@@ -6,16 +6,11 @@
 /*   By: sagemura <sagemura@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 15:59:12 by sagemura          #+#    #+#             */
-/*   Updated: 2024/02/08 20:39:34 by sagemura         ###   ########.fr       */
+/*   Updated: 2024/02/08 21:28:01 by sagemura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/so_long.h"
-
-__attribute__((destructor))
-static void destructor() {
-    system("leaks -q a.out");
-}
 
 static char	*next_point(char *str)
 {
@@ -60,6 +55,7 @@ static char	*stocks_ptr(char *ptr, char *temp, int rv)
 	if (!ptr)
 		return (ft_strdup(temp));
 	new_str = ft_strjoin(ptr, temp);
+	free(ptr);
 	return (new_str);
 }
 
@@ -74,53 +70,27 @@ static char	*ft_free(char *temp, char *ptr, int flag)
 char	*gnl4so_long(int fd)
 {
 	static char	*ptr;
-	char		*temp;
+	char		*tmp;
 	int			rv;
 
-	if (fd < 0 || !BUFFER_SIZE)
+	if (fd < 0 || BUFFER_SIZE<= 0)
 		return (NULL);
-	temp = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
-	if (!temp)
+	tmp = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
+	if (!tmp)
 		return (NULL);
 	rv = 1;
 	while (rv != 0 && !(ptr && ft_strchr(ptr, '\n')))
 	{
-		rv = read(fd, temp, BUFFER_SIZE);
+		rv = read(fd, tmp, BUFFER_SIZE);
 		if (rv == -1)
-			return (ft_free(temp, ptr, 1));
-		temp[rv] = '\0';
-		ptr = stocks_ptr(ptr, temp, rv);
+			return (ft_free(tmp, ptr, 1));
+		tmp[rv] = '\0';
+		ptr = stocks_ptr(ptr, tmp, rv);
 		if (ptr == NULL)
-			return (ft_free(temp, ptr, 0));
+			return (ft_free(tmp, ptr, 0));
 	}
-	free(temp);
-	temp = extract_next_line(ptr);
+	free(tmp);
+	tmp = extract_next_line(ptr);
 	ptr = next_point(ptr);
-	return (temp);
-}
-
-#include <fcntl.h>
-#include <stdio.h>
-
-int	main(void)
-{
-	int		fd;
-	char	*line;
-
-	fd = open("../test.ber", O_RDONLY);
-	if (fd == -1)
-	{
-		printf("Failed to open file\n");
-		return (1);
-	}
-	while ((line = gnl4so_long(fd)))
-	{
-		printf("%s", line);
-		free(line);
-	}
-	close(fd);
-	system("leaks -q a.out");
-	while (1)
-	;
-	return (0);
+	return (tmp);
 }
